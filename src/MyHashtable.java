@@ -77,7 +77,30 @@ public class MyHashtable<K, V> {
         }
         return null;
     }
-
+    public boolean contains(V value){
+        for (int i = 0; i < capacity; i++) {
+            HashNode<K, V> node = chainArray[i];
+            while (node != null) {
+                if (node.value.equals(value)) {
+                    return true;
+                }
+                node = node.next;
+            }
+        }
+        return false;
+    }
+    public K getKey(V value){
+        for (int i = 0; i < capacity; i++) {
+            HashNode<K, V> node = chainArray[i];
+            while (node != null) {
+                if (node.value.equals(value)) {
+                    return node.key;
+                }
+                node = node.next;
+            }
+        }
+        return null;
+    }
 
 
 
