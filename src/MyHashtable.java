@@ -48,5 +48,17 @@ public class MyHashtable<K, V> {
     public int getBucketIndex(int key){
     return key % chainArray.length;
     }
+    public V get(K key){
+        int index = hash(key);
+        HashNode<K, V> node = chainArray[index];
+        while (node != null) {
+            if (node.key.equals(key)) {
+                return node.value;
+            }
+            node = node.next;
+        }
+        return null;
+    }
+
 
 }
