@@ -101,6 +101,14 @@ public class MyHashtable<K, V> {
         }
         return null;
     }
+    public K replace( K key,V oldvalue,V newvalue){
+        K key1=getKey(oldvalue);
+        int index = hash(key);
+        HashNode<K, V> node = chainArray[index];
+        put(key1,newvalue);
+        return null;
+    }
+
 
 
 
